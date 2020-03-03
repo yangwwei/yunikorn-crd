@@ -1,0 +1,26 @@
+# permissions to do edit partitions.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: partition-editor-role
+rules:
+- apiGroups:
+  - yunikorn.incubator.apache.org
+  resources:
+  - partitions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - yunikorn.incubator.apache.org
+  resources:
+  - partitions/status
+  verbs:
+  - get
+  - patch
+  - update

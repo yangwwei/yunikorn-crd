@@ -1,0 +1,35 @@
+apiVersion: yunikorn.incubator.apache.org/v1alpha1
+kind: Partition
+metadata:
+  name: partition-sample
+spec:
+  # Add fields here
+  queues:
+    - name: root
+      submitacl: "*"
+      queues:
+        - name: advertisement
+          resources:
+            guaranteed:
+              memory: 500000
+              vcore: 50000
+            max:
+              memory: 800000
+              vcore: 80000
+        - name: search
+          resources:
+            guaranteed:
+              memory: 400000
+              vcore: 40000
+            max:
+              memory: 600000
+              vcore: 60000
+        - name: sandbox
+          resources:
+            guaranteed:
+              memory: 100000
+              vcore: 10000
+            max:
+              memory: 100000
+              vcore: 10000
+

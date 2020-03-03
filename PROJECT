@@ -1,0 +1,7 @@
+domain: incubator.apache.org
+repo: github.com/apache/incubator-yunikorn-crd
+resources:
+- group: yunikorn
+  kind: Partition
+  version: v1alpha1
+version: "2"
